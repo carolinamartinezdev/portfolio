@@ -1,0 +1,68 @@
+@import "../../global.scss";
+
+.About {
+  background-color: white;
+  display: flex;
+
+  .left {
+    flex: 0.6;
+    position: relative;
+
+    .wrapper {
+      width: 90%;
+      height: 90%;
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        font-size: 50px;
+        text-align: relative;
+        color: #94b49f;
+        padding: 30px 0 8px;
+      }
+
+      p {
+        font-size: 20px;
+        text-align: relative;
+        margin-top: 10px;
+      }
+
+      opa {
+        opacity: 0.4;
+      }
+      h1 {
+        font-size: 30px;
+        text-align: relative;
+        color: #94b49f;
+        padding: 15px 0 8px;
+      }
+    }
+  }
+
+  .right {
+    flex: 0.4;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .imgContainer {
+      width: 600px;
+      height: 600px;
+      background-color: #cee5d0;
+      border-radius: 89% 11% 86% 14% / 10% 87% 13% 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      float: left;
+
+      img {
+        height: 90%;
+        border-radius: 89% 11% 86% 14% / 10% 87% 13% 90%;
+      }
+    }
+  }
+}

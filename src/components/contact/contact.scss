@@ -1,0 +1,75 @@
+@import "../../global.scss";
+
+.contact {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    font-size: 50px;
+    color: #94b49f;
+  }
+
+  .top-page {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      margin-top: 7rem;
+    }
+
+    input {
+      width: 300px;
+      height: 30px;
+      font-size: 14px;
+      margin: 8px 0px;
+    }
+
+    textarea {
+      width: 300px;
+      height: 200px;
+      font-size: 14px;
+      margin: 8px 0px;
+    }
+
+    button {
+      width: 150px;
+      height: 30px;
+      color: white;
+      background-color: #94b49f;
+      border: none;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 8px 0px;
+    }
+    .icon {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .bottom-page {
+    flex: 1;
+    width: 100%;
+    height: 50%;
+
+    svg {
+      display: block;
+      height: 100%;
+    }
+  }
+}
