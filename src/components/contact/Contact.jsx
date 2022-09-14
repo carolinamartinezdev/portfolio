@@ -1,8 +1,9 @@
 import React, { useRef } from "react";
 import "./contact.scss";
 import EmailIcon from "@mui/icons-material/Email";
+import PersonIcon from "@mui/icons-material/Person";
 
-//import emailjs from "emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   //const form = useRef();
@@ -27,18 +28,44 @@ export default function Contact() {
   //       }
   //     );
   // };
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    [...form.elements].forEach((input) =>
+      console.log(`${input.name}: ${input.value}`)
+    ); // Not Important
+    form.reset();
+
+    emailjs
+      .sendForm(
+        "service_700gsvr",
+        "template_ipveum2",
+        form.current,
+        "7wA0yF2nqQh9brMJE"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
     <div className="contact" id="contact">
       <h1>Let's Connect!</h1>
       <div className="top-page">
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <input
             type="text"
             placeholder="Name"
             name="name"
             autocomplete="off"
           />
+
           <input
             type="email"
             placeholder="Email"
@@ -46,14 +73,15 @@ export default function Contact() {
             autocomplete="off"
           />
 
-          <input
+          {/* <input
             type="text"
             placeholder="Subject"
             id="subject"
             autocomplete="off"
-          />
+          /> */}
+
           <textarea
-            id="message"
+            name="message"
             placeholder="Message"
             cols="30"
             rows="10"
